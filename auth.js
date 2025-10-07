@@ -1,4 +1,4 @@
-//import NextAuth from "next-auth";
+import NextAuth from "next-auth";
 import Resend from "next-auth/providers/resend";
 import Google from "next-auth/providers/google";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
@@ -8,7 +8,7 @@ const config = {
   providers: [
     Resend({
       apiKey: process.env.RESEND_KEY,
-      from: "noreply@resend.codefastsaas.com",
+      from: "noreply@resend.datafastsaas.shop",
       name: "Email",
     }),
     Google({
