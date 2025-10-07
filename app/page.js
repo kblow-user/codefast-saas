@@ -1,14 +1,19 @@
 import ButtonLogin from "@/components/ButtonLogin";
 import FAQListItem from "@/components/FAQListItem";
+import Image from "next/image";
+import productDemo from "./productDemo.jpeg";
 
 export default function Home() {
   const isLoggedIn = true;
   const name = "Marc";
 
+  // console.log(process.env.MONGO_URI);
+
   return (
     <main>
+      {/* HEADER */}
       <section className="bg-fuchsia-200">
-        <div className="max-w-3xl mx-auto flex justify-between items-center">
+        <div className="max-w-3xl mx-auto flex justify-between items-center px-8 py-2">
           <div className="font-bold">CodeFastSaaS</div>
           <div className="space-x-4 md:bg-red-300">
             <a className="link link-hover" href="#pricing">
@@ -23,11 +28,26 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section className="text-center py-32 px-8 mb-4">
-        <button className="text-3xl font-bold px-8">Get started</button>
+      {/* HERO */}
+      <section className="text-center lg:text-left py-32 px-8 mb-4 flex flex-col lg:flex-row gap-14">
+        <Image
+          src={productDemo}
+          alt="Product demo"
+          className="w-96 rounded-xl saturate-150"
+        />
         {/* <div onClick={() => console.log("Clicked!")}></div> */}
-        <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+        <div>
+          <h1 className="text-4xl lg:text-5xl font-extrabold mb-6">
+            Collect customer feedback to build better products
+          </h1>
+          <div className="opacity-90 mb-10">
+            Create a feeedback board in minutes, prioritize features, and build
+            products your customers will love.
+          </div>
+          <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+        </div>
       </section>
+      {/* PRICING */}
       <section className="bg-base-300" id="pricing">
         <div className="py-32 px-8 max-w-3xl mx-auto">
           <p className="text-lg uppercase text-center text-primary mb-4">
@@ -86,16 +106,17 @@ export default function Home() {
             {[
               {
                 question: "What do I get exactly?",
-                answer: "Loreum Ipseum",
+                answer:
+                  "You will get the most of what you want in your data set",
               },
               {
                 question: "Can I get a refund?",
                 answer:
-                  "Loreum IpseumIf you are unsatisfy with our product and service, you may definitely get the refund by writing in.",
+                  "If you are unsatisfy with our product and service, you may definitely get the refund by writing in.",
               },
               {
                 question: "I have another question",
-                answer: "Loreum Ipseum",
+                answer: "Feel free to ask what is in your mind or doubt",
               },
             ].map((qa) => (
               <FAQListItem key={qa.question} qa={qa} />
