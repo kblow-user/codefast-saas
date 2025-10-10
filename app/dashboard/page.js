@@ -17,6 +17,7 @@ async function getUser() {
 
 export default async function Dashboard() {
   const user = await getUser();
+
   return (
     <main className="bg-base-200 min-h-screen">
       {/* HEADER */}
@@ -26,6 +27,7 @@ export default async function Dashboard() {
           <ButtonLogout />
         </div>
       </section>
+
       <section className="max-w-5xl mx-auto px-5 py-12 space-y-12">
         <FormNewBoard />
 
