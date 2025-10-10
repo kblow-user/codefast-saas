@@ -8,7 +8,7 @@ const config = {
   providers: [
     Resend({
       apiKey: process.env.RESEND_KEY,
-      from: "noreply@resend.datafastsaas.shop",
+      from: "onboarding@resend.dev",
       name: "Email",
     }),
     Google({

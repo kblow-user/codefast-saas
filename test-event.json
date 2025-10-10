@@ -1,0 +1,14 @@
+{
+  "id": "evt_test_12345",
+  "object": "event",
+  "type": "checkout.session.completed",
+  "data": {
+    "object": {
+      "id": "cs_test_12345",
+      "object": "checkout.session",
+      "customer_email": "test@example.com",
+      "amount_total": 5000,
+      "currency": "sg"
+    }
+  }
+}
