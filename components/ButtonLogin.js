@@ -4,7 +4,8 @@ import Link from "next/link";
 import { signIn } from "next-auth/react";
 
 const ButtonLogin = ({ session, extraStyle }) => {
-  const dashboardUrl ='/dashboard'
+  const dashboardUrl = "/dashboard";
+
   if (session) {
     return (
       <Link
@@ -15,6 +16,7 @@ const ButtonLogin = ({ session, extraStyle }) => {
       </Link>
     );
   }
+
   return (
     <button
       className={`btn btn-primary ${extraStyle ? extraStyle : ""}`}
