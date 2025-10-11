@@ -22,7 +22,7 @@ const getData = async (boardId) => {
 };
 
 export default async function PublicFeedbackBoard({ params }) {
-  const { boardId } = params;
+  const { boardId } = await params;
 
   const { board, posts } = await getData(boardId);
 
